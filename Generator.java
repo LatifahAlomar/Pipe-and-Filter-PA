@@ -3,21 +3,17 @@ import java.util.*;
 public class Generator extends Thread{
     PipedWriter myPw;
 
-    public Generator(PipedWriter pw ){
-        this.myPw=pw;
+    public Generator(final PipedWriter pw) {
+        this.myPw = pw;
     }
 
-    public static void run() throws IOException{//overwriting from threds , reding from file
-    FileReader fileReader = new FileReader("words.txt");//file to be read from
-    BufferedReader bufferedReader = new BufferedReader(fileReader);
-    List<String> lines = new ArrayList<String>();//list of words from file
-     String line = null;
+    public void run() {// overwriting from threds , reding from file
+        final FileReader fileReader = new FileReader("words.txt");// file to be read from
+        final BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String line = null;
     while ((line = bufferedReader.readLine()) != null) {
-        lines.add(line);//add the word to the list
+        myPw.write(line);
     }
-
-    //should be a pipe writer here but Allah knows how 
-
     bufferedReader.close();
     
 
