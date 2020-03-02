@@ -1,9 +1,9 @@
 import java.io.*;
 import java.util.*;
-public class Filter1 extends Thread{
+public class Generator extends Thread{
     PipedWriter myPw;
 
-    public Filter1(PipedWriter pw ){
+    public Generator(PipedWriter pw ){
         this.myPw=pw;
     }
 
