@@ -7,7 +7,7 @@ public class Generator extends Thread{
         this.myPw=pw;
     }
 
-    public static void rkun() throws IOException{//overwriting from threds , reding from file
+    public static void run() throws IOException{//overwriting from threds , reding from file
     FileReader fileReader = new FileReader("words.txt");//file to be read from
     BufferedReader bufferedReader = new BufferedReader(fileReader);
     List<String> lines = new ArrayList<String>();//list of words from file
@@ -15,15 +15,12 @@ public class Generator extends Thread{
     while ((line = bufferedReader.readLine()) != null) {
         lines.add(line);//add the word to the list
     }
+
+    //should be a pipe writer here but Allah knows how 
+
     bufferedReader.close();
+    
 
-
-
-
-    }
-
-    public static void main(String[] args) throws IOException{
-        rkun();
     }
 
 

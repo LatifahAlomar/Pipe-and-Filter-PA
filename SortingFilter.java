@@ -12,6 +12,8 @@ public class SortingFilter extends Thread{
 
     public void run(){//read from pipe and sort
 
+        
+
     }
 
 
